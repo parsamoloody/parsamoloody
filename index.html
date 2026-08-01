@@ -3,148 +3,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Personal portfolio of Alex Morgan, a creative web developer building thoughtful digital experiences.">
-  <meta name="theme-color" content="#f4f1ea">
-  <title>Alex Morgan | Creative Developer</title>
+  <meta name="description" content="Parsa Moloudi is a full-stack engineer in Tehran building scalable web products, backend systems, and open-source developer tools.">
+  <meta name="theme-color" content="#050816">
+  <meta property="og:title" content="Parsa Moloudi | Full-stack Engineer">
+  <meta property="og:description" content="Full-stack products, backend systems, and open-source tools built with TypeScript, React, Node.js, and more.">
+  <meta property="og:type" content="website">
+  <title>Parsa Moloudi | Full-stack Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
   <header class="site-header" id="top">
-    <a class="logo" href="#top" aria-label="Go to top">AM<span>.</span></a>
-    <nav class="desktop-nav" aria-label="Main navigation">
+    <a class="brand" href="#top" aria-label="Parsa Moloudi, back to top">
+      <span class="brand-mark">PM</span>
+      <span class="brand-copy">Parsa Moloudi<small>Full-stack engineer</small></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#capabilities">Capabilities</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="header-cta" href="resume.html" target="_blank">Résumé <span>↗</span></a>
-    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+
+    <a class="nav-cta" href="resume.html" target="_blank" rel="noopener">
+      Résumé <span aria-hidden="true">↗</span>
+    </a>
+
+    <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
       <span></span><span></span>
     </button>
+
     <div class="mobile-menu" aria-hidden="true">
-      <a href="#about">About</a><a href="#capabilities">Capabilities</a>
-      <a href="#work">Work</a><a href="#contact">Contact</a>
+      <div class="mobile-menu-label">Navigation</div>
+      <a href="#about"><span>01</span> About</a>
+      <a href="#capabilities"><span>02</span> Capabilities</a>
+      <a href="#work"><span>03</span> Selected work</a>
+      <a href="#contact"><span>04</span> Contact</a>
+      <div class="mobile-socials">
+        <a href="https://github.com/parsamoloody" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/parsamoloodi/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero section-shell" aria-labelledby="hero-title">
-      <div class="hero-kicker reveal"><span class="status-dot"></span> Available for select projects · 2026</div>
-      <h1 id="hero-title" class="hero-title reveal">
-        <span>Creative</span>
-        <span class="outline-row">developer <em>&amp;</em></span>
-        <span>digital maker.</span>
-      </h1>
-      <div class="hero-bottom reveal">
-        <p>I’m <strong>Alex Morgan</strong>, a <span id="age">24</span>-year-old developer who turns ambitious ideas into clear, fast, and memorable digital products.</p>
-        <a class="circle-link" href="#work" aria-label="See selected work">
-          <span>View work</span><b>↓</b>
-        </a>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orb orb-one" aria-hidden="true"></div>
+      <div class="hero-orb orb-two" aria-hidden="true"></div>
+
+      <div class="hero-top reveal">
+        <span class="availability"><i></i> Available for ambitious builds</span>
+        <span class="hero-location">35.6892° N, 51.3890° E <b>Tehran</b></span>
       </div>
-      <div class="scroll-line" aria-hidden="true"><span></span></div>
+
+      <div class="hero-main">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Full-stack engineer · Open-source builder</p>
+          <h1 id="hero-title" class="hero-title reveal">
+            <span class="hero-greeting">Hello, I’m</span>
+            <span class="hero-name" data-text="PARSA">PARSA</span>
+            <span class="hero-surname">MOLOUDI<span class="rgb-dot">.</span></span>
+          </h1>
+          <p class="hero-intro reveal">I engineer <strong>complete digital products</strong>, from expressive interfaces to scalable APIs and the infrastructure behind them.</p>
+          <div class="hero-actions reveal">
+            <a class="button button-primary" href="#work"><span>Explore my work</span><b aria-hidden="true">↓</b></a>
+            <a class="button button-ghost" href="https://github.com/parsamoloody" target="_blank" rel="noopener"><span>GitHub profile</span><b aria-hidden="true">↗</b></a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="profile-core">
+            <div class="core-glow"></div>
+            <span class="core-label">BUILDING WITH</span>
+            <strong>&lt;TS /&gt;</strong>
+            <small>Ideas → Systems</small>
+          </div>
+          <div class="floating-tag tag-react">React</div>
+          <div class="floating-tag tag-node">Node.js</div>
+          <div class="floating-tag tag-data">PostgreSQL</div>
+          <div class="floating-tag tag-devops">Docker</div>
+          <div class="visual-card code-card">
+            <div class="code-card-head"><span></span><span></span><span></span><b>parsa.ts</b></div>
+            <pre><code><i>const</i> engineer = {
+  focus: <em>"full-stack"</em>,
+  ships: <em>"real products"</em>,
+  status: <strong>true</strong>
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-stats reveal" aria-label="GitHub profile highlights">
+        <div><strong class="counter" data-target="17">17</strong><span>Public repositories</span></div>
+        <div><strong class="counter" data-target="23">23</strong><span>GitHub followers</span></div>
+        <div><strong>3+</strong><span>Engineering domains</span></div>
+        <a href="#about"><span>Scroll to discover</span><i aria-hidden="true">↓</i></a>
+      </div>
     </section>
 
-    <section class="marquee" aria-label="Areas of expertise">
+    <div class="tech-marquee" aria-label="Technology stack">
       <div class="marquee-track">
-        <span>Web development</span><i>✦</i><span>Creative direction</span><i>✦</i><span>UI engineering</span><i>✦</i><span>Interaction design</span><i>✦</i>
-        <span>Web development</span><i>✦</i><span>Creative direction</span><i>✦</i><span>UI engineering</span><i>✦</i><span>Interaction design</span><i>✦</i>
+        <span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>NestJS</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Node.js</span><i>✦</i><span>React</span><i>✦</i><span>Redis</span><i>✦</i><span>Docker</span><i>✦</i>
+        <span>TypeScript</span><i>✦</i><span>Next.js</span><i>✦</i><span>NestJS</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>Node.js</span><i>✦</i><span>React</span><i>✦</i><span>Redis</span><i>✦</i><span>Docker</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="about section-shell section-block" id="about" aria-labelledby="about-title">
+      <div class="section-heading reveal">
+        <span class="section-number">01 / ABOUT</span>
+        <h2 id="about-title">I turn complex requirements into <span class="gradient-text">clear, working systems.</span></h2>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-story reveal">
+          <p class="lead">I’m a full-stack developer based in Tehran, focused on building products that are useful, maintainable, and ready to grow.</p>
+          <p>My work spans polished React interfaces, modular backend services, database architecture, automation, and deployment. I enjoy understanding the entire system, then choosing the simplest architecture that can do the job well.</p>
+          <p>Beyond product work, I explore framework internals, algorithms, AI embeddings, and developer tooling. That curiosity led me to create <a href="https://github.com/parsamoloody/homa" target="_blank" rel="noopener">Homa.js</a>, a zero-dependency TypeScript web framework for Node.js.</p>
+        </div>
+
+        <aside class="profile-panel reveal" aria-label="Quick profile facts">
+          <div class="panel-corners" aria-hidden="true"></div>
+          <div class="profile-panel-head"><span>PROFILE.DATA</span><i>LIVE</i></div>
+          <dl>
+            <div><dt>Name</dt><dd>Parsa Moloudi</dd></div>
+            <div><dt>Role</dt><dd>Full-stack Engineer</dd></div>
+            <div><dt>Age</dt><dd>Private</dd></div>
+            <div><dt>Base</dt><dd>Tehran, Iran</dd></div>
+            <div><dt>Company</dt><dd>PERSML</dd></div>
+            <div><dt>Focus</dt><dd>Products &amp; systems</dd></div>
+          </dl>
+          <a href="https://github.com/parsamoloody" target="_blank" rel="noopener"><span>github.com/parsamoloody</span><b>↗</b></a>
+        </aside>
       </div>
     </section>
 
-    <section class="about section-shell" id="about" aria-labelledby="about-title">
-      <div class="section-index reveal"><span>01</span> About me</div>
-      <div class="about-grid">
-        <h2 id="about-title" class="section-title reveal">Curious by nature.<br><span>Intentional by design.</span></h2>
-        <div class="about-copy reveal">
-          <p class="lead">I bridge visual thinking and technical craft to make the web feel more human.</p>
-          <p>Based in Toronto and working worldwide, I care about the details people notice and the systems they don’t. My approach is collaborative, practical, and always grounded in the purpose behind the product.</p>
-          <dl class="quick-facts">
-            <div><dt>Age</dt><dd>24 years</dd></div>
-            <div><dt>Experience</dt><dd>4+ years</dd></div>
-            <div><dt>Location</dt><dd>Toronto, CA</dd></div>
-          </dl>
+    <section class="capabilities section-shell section-block" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-heading split-heading reveal">
+        <div>
+          <span class="section-number">02 / CAPABILITIES</span>
+          <h2 id="capabilities-title">From browser to database.</h2>
+        </div>
+        <p>I work across the stack, connecting product thinking with reliable engineering.</p>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability-card reveal">
+          <div class="capability-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M8 13h32v22H8zM8 19h32M14 10v6M34 10v6"/><path d="m18 26-4 4 4 4M30 26l4 4-4 4M27 24l-6 12"/></svg>
+          </div>
+          <span class="card-index">01</span>
+          <h3>Product interfaces</h3>
+          <p>Responsive applications, dashboards, component systems, state management, motion, and accessible user experiences.</p>
+          <ul><li>React &amp; Next.js</li><li>TypeScript</li><li>Redux Toolkit</li><li>CSS &amp; motion</li></ul>
+        </article>
+
+        <article class="capability-card reveal">
+          <div class="capability-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><ellipse cx="24" cy="11" rx="15" ry="6"/><path d="M9 11v13c0 3.3 6.7 6 15 6s15-2.7 15-6V11M9 24v13c0 3.3 6.7 6 15 6s15-2.7 15-6V24"/><path d="M18 17c1.8.5 3.8.8 6 .8s4.2-.3 6-.8"/></svg>
+          </div>
+          <span class="card-index">02</span>
+          <h3>Backend systems</h3>
+          <p>Clean APIs, authentication, permissions, queues, notifications, data models, and maintainable service architecture.</p>
+          <ul><li>Node.js &amp; NestJS</li><li>PostgreSQL &amp; MySQL</li><li>Prisma &amp; TypeORM</li><li>Redis &amp; REST APIs</li></ul>
+        </article>
+
+        <article class="capability-card reveal">
+          <div class="capability-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 6 8 15v18l16 9 16-9V15zM8 15l16 9 16-9M24 24v18"/><path d="m16 10 16 9v10"/></svg>
+          </div>
+          <span class="card-index">03</span>
+          <h3>Infrastructure &amp; data</h3>
+          <p>Containerized workflows, web servers, deployment pipelines, observability, and practical AI/data experiments.</p>
+          <ul><li>Docker &amp; Nginx</li><li>Linux &amp; Git</li><li>Python &amp; embeddings</li><li>Testing &amp; monitoring</li></ul>
+        </article>
+      </div>
+
+      <div class="skills-console reveal" aria-label="Technical skills">
+        <div class="console-head"><span></span><span></span><span></span><b>~/skills</b></div>
+        <div class="console-body">
+          <p><i>$</i> ls core-stack/</p>
+          <div class="skill-cloud">
+            <span>TypeScript</span><span>JavaScript</span><span>PHP</span><span>React</span><span>Next.js</span><span>Node.js</span><span>NestJS</span><span>Laravel</span><span>PostgreSQL</span><span>MySQL</span><span>ClickHouse</span><span>Prisma</span><span>TypeORM</span><span>Redis</span><span>Docker</span><span>Nginx</span><span>Python</span><span>Go</span><span>REST APIs</span><span>Git</span><span>Linux</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="capabilities section-shell" id="capabilities" aria-labelledby="capabilities-title">
-      <div class="section-index reveal"><span>02</span> Capabilities</div>
-      <div class="capabilities-head">
-        <h2 id="capabilities-title" class="section-title reveal">What I bring<br><span>to the table.</span></h2>
-        <p class="reveal">From first sketch to final deployment, I create cohesive digital experiences with a sharp eye for usability and performance.</p>
+    <section class="work section-shell section-block" id="work" aria-labelledby="work-title">
+      <div class="section-heading split-heading reveal">
+        <div>
+          <span class="section-number">03 / SELECTED WORK</span>
+          <h2 id="work-title">Systems I’ve shipped.</h2>
+        </div>
+        <p>Selected product, platform, and open-source work grounded in real engineering challenges.</p>
       </div>
-      <div class="service-list">
-        <article class="service reveal">
-          <span class="service-number">01</span><h3>Front-end development</h3>
-          <p>Responsive, accessible interfaces built with semantic code and thoughtful micro-interactions.</p><span class="service-icon">↗</span>
-        </article>
-        <article class="service reveal">
-          <span class="service-number">02</span><h3>UI / UX design</h3>
-          <p>Clear user journeys, modular design systems, prototypes, and polished product interfaces.</p><span class="service-icon">↗</span>
-        </article>
-        <article class="service reveal">
-          <span class="service-number">03</span><h3>Creative development</h3>
-          <p>Expressive web experiences that use motion and interaction to tell a compelling story.</p><span class="service-icon">↗</span>
-        </article>
-        <article class="service reveal">
-          <span class="service-number">04</span><h3>Performance &amp; strategy</h3>
-          <p>Audits, optimization, technical planning, and maintainable solutions designed to scale.</p><span class="service-icon">↗</span>
-        </article>
-      </div>
-      <div class="tools reveal" aria-label="Tools and technologies">
-        <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>CSS</span><span>Figma</span><span>Node.js</span><span>Git</span>
-      </div>
-    </section>
 
-    <section class="work section-shell" id="work" aria-labelledby="work-title">
-      <div class="section-index reveal"><span>03</span> Selected work</div>
-      <div class="work-head">
-        <h2 id="work-title" class="section-title reveal">Projects with<br><span>purpose.</span></h2>
-        <p class="reveal">A selection of digital products and experiences made for curious teams.</p>
-      </div>
-      <div class="projects">
-        <a class="project project-large reveal" href="#" aria-label="View Northline project">
-          <div class="project-visual visual-one">
-            <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i></div><div class="northline-mark">NORTH<br>LINE<span>®</span></div><p>OUTSIDE IS<br>THE NEW INSIDE</p></div>
+      <div class="project-list">
+        <article class="project-card project-task reveal" data-tilt>
+          <div class="project-info">
+            <div class="project-meta"><span>01</span><span>Full-stack product · 2026</span></div>
+            <h3>Task Manager</h3>
+            <p>A modern team productivity platform with workspaces, Kanban boards, lists, tasks, authentication, and a modular monorepo architecture.</p>
+            <div class="project-tags"><span>Next.js 16</span><span>NestJS</span><span>PostgreSQL</span><span>Prisma</span><span>Turborepo</span></div>
+            <div class="project-links">
+              <a href="https://github.com/parsamoloody/taks_manager" target="_blank" rel="noopener">Explore source <b>↗</b></a>
+            </div>
           </div>
-          <div class="project-meta"><div><span>01</span><h3>Northline</h3></div><p>Brand experience · Development</p><b>↗</b></div>
-        </a>
-        <a class="project reveal" href="#" aria-label="View Monocle project">
-          <div class="project-visual visual-two"><div class="phone"><div class="phone-speaker"></div><div class="app-symbol">M</div><h4>Be present.<br>Stay curious.</h4><div class="app-button">Begin your day →</div></div></div>
-          <div class="project-meta"><div><span>02</span><h3>Monocle</h3></div><p>Product design · Mobile</p><b>↗</b></div>
-        </a>
-        <a class="project reveal" href="#" aria-label="View Arc Studio project">
-          <div class="project-visual visual-three"><div class="arc-word">arc<span>®</span></div><div class="arc-circle"></div><small>ARCHITECTURE FOR<br>A CHANGING WORLD</small></div>
-          <div class="project-meta"><div><span>03</span><h3>Arc Studio</h3></div><p>Portfolio · Art direction</p><b>↗</b></div>
-        </a>
+          <div class="project-visual task-visual" aria-hidden="true">
+            <div class="mock-window">
+              <div class="mock-top"><div><i></i><i></i><i></i></div><span>Workspace / Product</span><b>PM</b></div>
+              <div class="kanban">
+                <div class="kanban-side"><strong>P</strong><i></i><i></i><i></i><i></i></div>
+                <div class="kanban-main">
+                  <div class="kanban-heading"><div><small>BOARD</small><strong>Launch roadmap</strong></div><span class="mock-button">+ New task</span></div>
+                  <div class="kanban-columns">
+                    <div class="k-column"><span>BACKLOG <b>3</b></span><div class="k-task"><i class="pink"></i><strong>Design system audit</strong><small>UI/UX · Today</small><em>PM</em></div><div class="k-task short"><i class="blue"></i><strong>API documentation</strong><small>Backend</small></div></div>
+                    <div class="k-column"><span>IN PROGRESS <b>2</b></span><div class="k-task feature"><i class="purple"></i><strong>Build team dashboard</strong><div class="progress-mini"><span></span></div><small>5 / 8 subtasks</small><em>AR</em></div></div>
+                    <div class="k-column"><span>DONE <b>4</b></span><div class="k-task"><i class="green"></i><strong>Authentication flow</strong><small>Completed</small><em>✓</em></div><div class="k-task short"><i class="green"></i><strong>Database schema</strong><small>Completed</small></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card project-b2b reveal" data-tilt>
+          <div class="project-info">
+            <div class="project-meta"><span>02</span><span>B2B platform · Production work</span></div>
+            <h3>Ad Monetization Platform</h3>
+            <p>A multi-role B2B operations platform for managing AdMob apps, AdSense sites, performance reports, users, finance workflows, invoices, and notifications.</p>
+            <div class="project-tags"><span>Next.js</span><span>NestJS / Laravel</span><span>MySQL</span><span>Redis</span><span>ClickHouse</span></div>
+            <div class="project-links"><span class="private-label"><i></i> Private production system</span></div>
+          </div>
+          <div class="project-visual b2b-visual" aria-hidden="true">
+            <div class="dashboard-shell">
+              <div class="dash-sidebar"><b>PM</b><span class="active"></span><span></span><span></span><span></span><span></span></div>
+              <div class="dash-content">
+                <div class="dash-head"><div><small>OVERVIEW</small><strong>Performance dashboard</strong></div><span class="mock-button">Jul 01 — Jul 31⌄</span></div>
+                <div class="metric-row"><div><span>Revenue</span><strong>$84.2K</strong><small>↗ 12.4%</small></div><div><span>Active apps</span><strong>128</strong><small>↗ 8 new</small></div><div><span>Impressions</span><strong>4.8M</strong><small>↗ 18.2%</small></div></div>
+                <div class="chart-panel"><div class="chart-title"><span>Revenue overview</span><small>● AdMob&nbsp;&nbsp; ● AdSense</small></div><svg viewBox="0 0 500 170" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8157ff" stop-opacity=".4"/><stop offset="1" stop-color="#8157ff" stop-opacity="0"/></linearGradient></defs><path class="chart-grid" d="M0 30H500M0 75H500M0 120H500M0 165H500"/><path class="chart-fill" d="M0 148 C40 135 62 138 95 109 S150 117 184 90 S240 105 278 67 S330 80 365 48 S425 64 500 20 L500 170 L0 170Z"/><path class="chart-line" d="M0 148 C40 135 62 138 95 109 S150 117 184 90 S240 105 278 67 S330 80 365 48 S425 64 500 20"/><circle cx="365" cy="48" r="5"/></svg></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card project-homa reveal" data-tilt>
+          <div class="project-info">
+            <div class="project-meta"><span>03</span><span>Open source · 2026</span></div>
+            <h3>Homa.js</h3>
+            <p>A lightweight, zero-dependency Node.js web framework with native TypeScript support, expressive routing, middleware, body parsing, and type-safe APIs.</p>
+            <div class="project-tags"><span>TypeScript</span><span>Node.js</span><span>Zero dependencies</span><span>MIT</span></div>
+            <div class="project-links"><a href="https://github.com/parsamoloody/homa" target="_blank" rel="noopener">Explore framework <b>↗</b></a></div>
+          </div>
+          <div class="project-visual homa-visual" aria-hidden="true">
+            <div class="homa-terminal">
+              <div class="terminal-head"><div><i></i><i></i><i></i></div><span>server.ts — homa</span></div>
+              <pre><code><span class="code-purple">import</span> HomaApp, { jsonParser }
+<span class="code-purple">from</span> <span class="code-green">"homajs"</span>
+
+<span class="code-purple">const</span> app = <span class="code-purple">new</span> HomaApp()
+app.use(jsonParser())
+
+app.get(<span class="code-green">"/api/hello"</span>, (req, res) => {
+  res.json({
+    message: <span class="code-green">"Built with Homa"</span>,
+    fast: <span class="code-blue">true</span>
+  })
+})
+
+app.listen(<span class="code-orange">3000</span>) <span class="terminal-caret"></span></code></pre>
+              <div class="terminal-status"><span>● Server running</span><b>localhost:3000</b></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card project-jantech reveal" data-tilt>
+          <div class="project-info">
+            <div class="project-meta"><span>04</span><span>Interactive web · 2025</span></div>
+            <h3>Jantech V2</h3>
+            <p>A multilingual appliance product platform with interactive 3D presentation, rich product content, category discovery, collaboration requests, and financing flows.</p>
+            <div class="project-tags"><span>Next.js</span><span>React 19</span><span>Three.js</span><span>Framer Motion</span><span>Tailwind</span></div>
+            <div class="project-links">
+              <a href="https://smartcdv2.vercel.app" target="_blank" rel="noopener">Live experience <b>↗</b></a>
+              <a href="https://github.com/parsamoloody/jantech-v2" target="_blank" rel="noopener">Source <b>↗</b></a>
+            </div>
+          </div>
+          <div class="project-visual jantech-visual" aria-hidden="true">
+            <div class="phone-glow"></div>
+            <div class="smart-phone">
+              <div class="phone-island"></div>
+              <div class="profile-cover"></div>
+              <div class="profile-avatar">3D</div>
+              <strong>Jantech</strong><span>Smart home appliances</span>
+              <div class="profile-links"><i>FA</i><i>EN</i><i>3D</i></div>
+              <span class="mock-button">Explore products</span>
+              <div class="profile-card-line"></div><div class="profile-card-line small"></div>
+            </div>
+            <div class="float-chip chip-3d">3D</div><div class="float-chip chip-motion">Motion</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="more-work reveal">
+        <div><span class="section-number">MORE EXPLORATIONS</span><h3>Curiosity, committed.</h3></div>
+        <div class="repo-links">
+          <a href="https://github.com/parsamoloody/149AlgorithmsChallenge" target="_blank" rel="noopener"><span>149 Algorithms Challenge<small>TypeScript · Problem solving</small></span><b>↗</b></a>
+          <a href="https://github.com/parsamoloody/data-embedding" target="_blank" rel="noopener"><span>Data Embedding<small>Python · AI / data</small></span><b>↗</b></a>
+          <a href="https://github.com/parsamoloody/chat_bot" target="_blank" rel="noopener"><span>AI Chatbot<small>Go · OpenAI</small></span><b>↗</b></a>
+        </div>
       </div>
     </section>
 
-    <section class="resume section-shell" id="resume" aria-labelledby="resume-title">
-      <div class="resume-card reveal">
-        <div><div class="section-index light"><span>04</span> Résumé</div><h2 id="resume-title">The short version<br><span>of my story.</span></h2></div>
-        <div class="resume-side"><p>Experience, education, selected clients, and the skills I use to bring digital work to life.</p><a href="resume.html" target="_blank">Open résumé <span>↗</span></a></div>
+    <section class="principles section-shell section-block" aria-labelledby="principles-title">
+      <div class="section-heading reveal">
+        <span class="section-number">04 / HOW I BUILD</span>
+        <h2 id="principles-title">Strong products need more than <span class="gradient-text">working code.</span></h2>
+      </div>
+      <div class="principle-list">
+        <article class="reveal"><span>01</span><div><h3>Understand the system</h3><p>Start with users, constraints, data, and failure modes before choosing the tools.</p></div><i>↘</i></article>
+        <article class="reveal"><span>02</span><div><h3>Design for change</h3><p>Build clear boundaries and reusable patterns so the product can evolve without slowing down.</p></div><i>↘</i></article>
+        <article class="reveal"><span>03</span><div><h3>Ship the whole experience</h3><p>Performance, accessibility, deployment, and maintainability are product features too.</p></div><i>↘</i></article>
       </div>
     </section>
 
     <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
-      <div class="section-index reveal"><span>05</span> Contact</div>
-      <div class="contact-main reveal">
-        <p>Have a project in mind?</p>
-        <h2 id="contact-title">Let’s make<br><a href="mailto:hello@alexmorgan.dev">something great.</a></h2>
+      <div class="contact-grid" aria-hidden="true"></div>
+      <div class="contact-orb" aria-hidden="true"></div>
+      <div class="contact-inner reveal">
+        <span class="section-number">05 / LET’S BUILD</span>
+        <p>Have a product, platform, or hard technical problem?</p>
+        <h2 id="contact-title">Let’s turn it into something <span class="gradient-text">real.</span></h2>
+        <div class="contact-actions">
+          <a class="button button-primary" href="https://www.linkedin.com/in/parsamoloodi/" target="_blank" rel="noopener"><span>Start a conversation</span><b>↗</b></a>
+          <a class="text-link" href="https://github.com/parsamoloody" target="_blank" rel="noopener">Find me on GitHub <b>↗</b></a>
+        </div>
       </div>
-      <div class="contact-footer reveal">
-        <a href="mailto:hello@alexmorgan.dev">hello@alexmorgan.dev ↗</a>
-        <div class="socials"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">Dribbble</a></div>
-        <a href="#top">Back to top ↑</a>
-      </div>
+      <footer class="site-footer">
+        <div><span class="brand-mark">PM</span><p>Designed &amp; engineered with intent.</p></div>
+        <div class="footer-links"><a href="https://github.com/parsamoloody" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/parsamoloodi/" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top ↑</a></div>
+        <p>© <span id="year">2026</span> Parsa Moloudi</p>
+      </footer>
     </section>
   </main>
-  <footer><span>© <span id="year"></span> Alex Morgan</span><span>Designed with care. Built with code.</span></footer>
 </body>
 </html>

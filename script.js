@@ -1,6 +1,35 @@
-// Scroll reveal
-const revealItems = document.querySelectorAll('.reveal');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+// Accessible mobile navigation
+const menuButton = document.querySelector('.menu-button');
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+function setMenu(open) {
+  if (!menuButton || !mobileMenu) return;
+  menuButton.classList.toggle('active', open);
+  mobileMenu.classList.toggle('open', open);
+  document.body.classList.toggle('menu-open', open);
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  mobileMenu.setAttribute('aria-hidden', String(!open));
+}
+
+menuButton?.addEventListener('click', () => {
+  setMenu(!mobileMenu?.classList.contains('open'));
+});
+
+mobileLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenu(false);
+});
+
+window.addEventListener('pageshow', () => setMenu(false));
+
+// Reveal content when it enters the viewport
+const revealItems = document.querySelectorAll('.reveal');
 
 if (reduceMotion || !('IntersectionObserver' in window)) {
   revealItems.forEach((item) => item.classList.add('visible'));
@@ -11,51 +40,109 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
       entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -45px' });
 
   revealItems.forEach((item, index) => {
-    item.style.transitionDelay = `${Math.min(index % 4, 3) * 70}ms`;
+    item.style.transitionDelay = `${Math.min(index % 3, 2) * 70}ms`;
     revealObserver.observe(item);
   });
 }
 
-// Mobile navigation
-const menuButton = document.querySelector('.menu-button');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileLinks = document.querySelectorAll('.mobile-menu a');
-
-function setMenu(open) {
-  menuButton.classList.toggle('active', open);
-  mobileMenu.classList.toggle('open', open);
-  document.body.classList.toggle('menu-open', open);
-  menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  mobileMenu.setAttribute('aria-hidden', String(!open));
-}
-
-menuButton.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
-mobileLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') setMenu(false);
-});
-
-// Active navigation state
+// Header state, progress bar, and active navigation
+const header = document.querySelector('.site-header');
+const progressBar = document.querySelector('.scroll-progress span');
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('.desktop-nav a');
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    navLinks.forEach((link) => {
-      const active = link.getAttribute('href') === `#${entry.target.id}`;
-      link.style.opacity = active ? '1' : '.55';
+let scrollTicking = false;
+
+function updateScrollUI() {
+  const scrollTop = window.scrollY;
+  const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  header?.classList.toggle('scrolled', scrollTop > 30);
+  if (progressBar) progressBar.style.width = `${Math.min((scrollTop / scrollable) * 100, 100)}%`;
+  scrollTicking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (scrollTicking) return;
+  scrollTicking = true;
+  requestAnimationFrame(updateScrollUI);
+}, { passive: true });
+
+updateScrollUI();
+
+if ('IntersectionObserver' in window) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+      });
+    });
+  }, { rootMargin: '-38% 0px -56%', threshold: 0 });
+
+  sections.forEach((section) => sectionObserver.observe(section));
+}
+
+// Soft RGB cursor lighting on devices with a precise pointer
+const cursorGlow = document.querySelector('.cursor-glow');
+if (cursorGlow && finePointer && !reduceMotion) {
+  let pointerX = window.innerWidth / 2;
+  let pointerY = window.innerHeight / 2;
+  let glowX = pointerX;
+  let glowY = pointerY;
+
+  window.addEventListener('pointermove', (event) => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+  }, { passive: true });
+
+  const moveGlow = () => {
+    glowX += (pointerX - glowX) * 0.12;
+    glowY += (pointerY - glowY) * 0.12;
+    cursorGlow.style.transform = `translate3d(${glowX - 260}px, ${glowY - 260}px, 0)`;
+    requestAnimationFrame(moveGlow);
+  };
+
+  requestAnimationFrame(moveGlow);
+}
+
+// Count GitHub highlights once the hero is visible
+const counters = document.querySelectorAll('.counter');
+if (reduceMotion) {
+  counters.forEach((counter) => { counter.textContent = counter.dataset.target; });
+} else {
+  counters.forEach((counter) => {
+    const target = Number(counter.dataset.target || 0);
+    const duration = 900;
+    const start = performance.now();
+
+    const updateCounter = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = String(Math.round(target * eased));
+      if (progress < 1) requestAnimationFrame(updateCounter);
+    };
+
+    requestAnimationFrame(updateCounter);
+  });
+}
+
+// Subtle depth on project cards without affecting touch devices
+if (finePointer && !reduceMotion) {
+  document.querySelectorAll('[data-tilt]').forEach((card) => {
+    card.addEventListener('pointermove', (event) => {
+      const bounds = card.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      card.style.transform = `perspective(1400px) rotateX(${-y * 1.3}deg) rotateY(${x * 1.3}deg)`;
+    });
+
+    card.addEventListener('pointerleave', () => {
+      card.style.transform = '';
     });
   });
-}, { rootMargin: '-40% 0px -50%' });
-sections.forEach((section) => sectionObserver.observe(section));
+}
 
-// Prevent placeholder projects/social links from jumping to the top.
-document.querySelectorAll('.project[href="#"], .socials a[href="#"]').forEach((link) => {
-  link.addEventListener('click', (event) => event.preventDefault());
-});
-
-document.querySelector('#year').textContent = new Date().getFullYear();
+const year = document.querySelector('#year');
+if (year) year.textContent = new Date().getFullYear();

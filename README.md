@@ -1,34 +1,49 @@
-# Personal Portfolio
+# Parsa Moloudi · Personal Portfolio
 
-A responsive portfolio built only with HTML, CSS, and vanilla JavaScript.
+A responsive, dependency-free portfolio built with semantic HTML, modern CSS, and vanilla JavaScript.
 
-## Important placeholder assumptions
+## Design
 
-The original request did not include personal details, so these values are intentional placeholders and must be replaced before publishing:
+- Dark navy visual system with cyan, blue, purple, and pink RGB lighting
+- Responsive custom illustrations for Task Manager, B2B analytics, Homa.js, and Jantech
+- Scroll reveals, reading progress, active navigation, cursor lighting, counters, and subtle depth
+- Mobile navigation, keyboard support, reduced-motion support, and print-friendly résumé
+- No framework, bundler, runtime dependency, or generated image asset required
 
-- Name and initials: **Alex Morgan / AM**
-- Age: **24**
-- Location: **Toronto, Canada**
-- Email and social-profile URLs
-- Biography, experience, education, recognition, and languages
-- Project names, descriptions, links, and illustrative mockups
-- Availability message and listed capabilities/tools
+## Content sources
 
-Search for `Alex Morgan`, `24`, `Toronto`, and `href="#"` in `index.html` and `resume.html` to find the main replacement points.
+The project and skills copy was researched from Parsa's public GitHub repositories and locally reviewed project structure:
 
-## Files
+- [GitHub profile](https://github.com/parsamoloody)
+- [Task Manager](https://github.com/parsamoloody/taks_manager)
+- [Homa.js](https://github.com/parsamoloody/homa)
+- [Jantech V2](https://github.com/parsamoloody/jantech-v2)
+- Local B2B ad monetization platform modules under `Documents/adymob`
 
-- `index.html`: portfolio content and page structure
-- `styles.css`: responsive design and subtle scroll/marquee animations
-- `script.js`: scroll reveals, active navigation, and accessible mobile menu
-- `resume.html`: printable résumé with a Save as PDF / Print action
+No private credentials, endpoints, customer data, or business figures were copied into the site. Numbers shown inside the B2B dashboard illustration are decorative mock data.
+
+## One detail to customize
+
+Age is shown as **Private** because no reliable public source provided it. Replace the two `Age` values in `index.html` and `resume.html` if you want to publish it.
+
+The public GitHub profile does not expose an email address, so the contact call-to-action uses LinkedIn and GitHub instead of inventing one.
 
 ## Run locally
 
-Open `index.html` directly, or serve the folder:
-
 ```bash
+cd /home/parsa/personal-portfolio
 python3 -m http.server 4173
 ```
 
-Then visit `http://127.0.0.1:4173`.
+Open <http://127.0.0.1:4173>.
+
+## Files
+
+- `index.html` contains the portfolio structure and content
+- `styles.css` contains the complete responsive design and illustrations
+- `script.js` contains progressive interactions
+- `resume.html` is a printable résumé with a Save as PDF action
+
+## Recommended deployment
+
+This site can be deployed directly to GitHub Pages, Cloudflare Pages, Netlify, or Vercel as a static directory. No build command is needed.
