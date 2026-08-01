@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Alex Morgan, a creative web developer building thoughtful digital experiences.">
+  <meta name="theme-color" content="#f4f1ea">
+  <title>Alex Morgan | Creative Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <a class="logo" href="#top" aria-label="Go to top">AM<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-cta" href="resume.html" target="_blank">Résumé <span>↗</span></a>
+    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <div class="mobile-menu" aria-hidden="true">
+      <a href="#about">About</a><a href="#capabilities">Capabilities</a>
+      <a href="#work">Work</a><a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-kicker reveal"><span class="status-dot"></span> Available for select projects · 2026</div>
+      <h1 id="hero-title" class="hero-title reveal">
+        <span>Creative</span>
+        <span class="outline-row">developer <em>&amp;</em></span>
+        <span>digital maker.</span>
+      </h1>
+      <div class="hero-bottom reveal">
+        <p>I’m <strong>Alex Morgan</strong>, a <span id="age">24</span>-year-old developer who turns ambitious ideas into clear, fast, and memorable digital products.</p>
+        <a class="circle-link" href="#work" aria-label="See selected work">
+          <span>View work</span><b>↓</b>
+        </a>
+      </div>
+      <div class="scroll-line" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section class="marquee" aria-label="Areas of expertise">
+      <div class="marquee-track">
+        <span>Web development</span><i>✦</i><span>Creative direction</span><i>✦</i><span>UI engineering</span><i>✦</i><span>Interaction design</span><i>✦</i>
+        <span>Web development</span><i>✦</i><span>Creative direction</span><i>✦</i><span>UI engineering</span><i>✦</i><span>Interaction design</span><i>✦</i>
+      </div>
+    </section>
+
+    <section class="about section-shell" id="about" aria-labelledby="about-title">
+      <div class="section-index reveal"><span>01</span> About me</div>
+      <div class="about-grid">
+        <h2 id="about-title" class="section-title reveal">Curious by nature.<br><span>Intentional by design.</span></h2>
+        <div class="about-copy reveal">
+          <p class="lead">I bridge visual thinking and technical craft to make the web feel more human.</p>
+          <p>Based in Toronto and working worldwide, I care about the details people notice and the systems they don’t. My approach is collaborative, practical, and always grounded in the purpose behind the product.</p>
+          <dl class="quick-facts">
+            <div><dt>Age</dt><dd>24 years</dd></div>
+            <div><dt>Experience</dt><dd>4+ years</dd></div>
+            <div><dt>Location</dt><dd>Toronto, CA</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities section-shell" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-index reveal"><span>02</span> Capabilities</div>
+      <div class="capabilities-head">
+        <h2 id="capabilities-title" class="section-title reveal">What I bring<br><span>to the table.</span></h2>
+        <p class="reveal">From first sketch to final deployment, I create cohesive digital experiences with a sharp eye for usability and performance.</p>
+      </div>
+      <div class="service-list">
+        <article class="service reveal">
+          <span class="service-number">01</span><h3>Front-end development</h3>
+          <p>Responsive, accessible interfaces built with semantic code and thoughtful micro-interactions.</p><span class="service-icon">↗</span>
+        </article>
+        <article class="service reveal">
+          <span class="service-number">02</span><h3>UI / UX design</h3>
+          <p>Clear user journeys, modular design systems, prototypes, and polished product interfaces.</p><span class="service-icon">↗</span>
+        </article>
+        <article class="service reveal">
+          <span class="service-number">03</span><h3>Creative development</h3>
+          <p>Expressive web experiences that use motion and interaction to tell a compelling story.</p><span class="service-icon">↗</span>
+        </article>
+        <article class="service reveal">
+          <span class="service-number">04</span><h3>Performance &amp; strategy</h3>
+          <p>Audits, optimization, technical planning, and maintainable solutions designed to scale.</p><span class="service-icon">↗</span>
+        </article>
+      </div>
+      <div class="tools reveal" aria-label="Tools and technologies">
+        <span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>CSS</span><span>Figma</span><span>Node.js</span><span>Git</span>
+      </div>
+    </section>
+
+    <section class="work section-shell" id="work" aria-labelledby="work-title">
+      <div class="section-index reveal"><span>03</span> Selected work</div>
+      <div class="work-head">
+        <h2 id="work-title" class="section-title reveal">Projects with<br><span>purpose.</span></h2>
+        <p class="reveal">A selection of digital products and experiences made for curious teams.</p>
+      </div>
+      <div class="projects">
+        <a class="project project-large reveal" href="#" aria-label="View Northline project">
+          <div class="project-visual visual-one">
+            <div class="browser-frame"><div class="browser-bar"><i></i><i></i><i></i></div><div class="northline-mark">NORTH<br>LINE<span>®</span></div><p>OUTSIDE IS<br>THE NEW INSIDE</p></div>
+          </div>
+          <div class="project-meta"><div><span>01</span><h3>Northline</h3></div><p>Brand experience · Development</p><b>↗</b></div>
+        </a>
+        <a class="project reveal" href="#" aria-label="View Monocle project">
+          <div class="project-visual visual-two"><div class="phone"><div class="phone-speaker"></div><div class="app-symbol">M</div><h4>Be present.<br>Stay curious.</h4><div class="app-button">Begin your day →</div></div></div>
+          <div class="project-meta"><div><span>02</span><h3>Monocle</h3></div><p>Product design · Mobile</p><b>↗</b></div>
+        </a>
+        <a class="project reveal" href="#" aria-label="View Arc Studio project">
+          <div class="project-visual visual-three"><div class="arc-word">arc<span>®</span></div><div class="arc-circle"></div><small>ARCHITECTURE FOR<br>A CHANGING WORLD</small></div>
+          <div class="project-meta"><div><span>03</span><h3>Arc Studio</h3></div><p>Portfolio · Art direction</p><b>↗</b></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="resume section-shell" id="resume" aria-labelledby="resume-title">
+      <div class="resume-card reveal">
+        <div><div class="section-index light"><span>04</span> Résumé</div><h2 id="resume-title">The short version<br><span>of my story.</span></h2></div>
+        <div class="resume-side"><p>Experience, education, selected clients, and the skills I use to bring digital work to life.</p><a href="resume.html" target="_blank">Open résumé <span>↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
+      <div class="section-index reveal"><span>05</span> Contact</div>
+      <div class="contact-main reveal">
+        <p>Have a project in mind?</p>
+        <h2 id="contact-title">Let’s make<br><a href="mailto:hello@alexmorgan.dev">something great.</a></h2>
+      </div>
+      <div class="contact-footer reveal">
+        <a href="mailto:hello@alexmorgan.dev">hello@alexmorgan.dev ↗</a>
+        <div class="socials"><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">Dribbble</a></div>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </section>
+  </main>
+  <footer><span>© <span id="year"></span> Alex Morgan</span><span>Designed with care. Built with code.</span></footer>
+</body>
+</html>
