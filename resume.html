@@ -3,71 +3,615 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Résumé of Parsa Moloudi, backend and DevOps engineer specializing in scalable APIs, clean architecture, performance, CI/CD, and production reliability.">
-  <title>Parsa Moloudi | Backend &amp; DevOps Résumé</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Resume of Parsa Moloudi, a backend and DevOps engineer specializing in Node.js, NestJS, Linux, Docker, databases, system design, and reliable production systems.">
+  <title>Parsa Moloudi | Backend &amp; DevOps Engineer</title>
   <style>
-    :root{--ink:#11152a;--muted:#68708a;--line:#d8dceb;--paper:#f8f9fd;--blue:#4d66ed;--cyan:#00a6ca;--display:"Space Grotesk",sans-serif;--mono:"JetBrains Mono",monospace}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#e8eaf2;font-family:var(--display);-webkit-font-smoothing:antialiased}.actions{display:flex;width:min(920px,calc(100% - 32px));margin:22px auto;align-items:center;justify-content:space-between}.actions a,.actions button{padding:11px 15px;border:1px solid #aeb4c7;border-radius:7px;color:var(--ink);background:transparent;font:500 10px var(--mono);text-decoration:none;cursor:pointer}.actions button{color:#fff;border-color:var(--ink);background:var(--ink)}.page{width:min(920px,calc(100% - 32px));min-height:1180px;margin:0 auto 40px;padding:65px;background:var(--paper);box-shadow:0 25px 70px rgba(25,30,55,.12)}.header{display:grid;grid-template-columns:1fr auto;gap:35px;padding-bottom:34px;border-bottom:2px solid var(--ink)}.header h1{margin:0;font-size:52px;line-height:.9;letter-spacing:-.065em}.header p{margin:12px 0 0;color:var(--muted);font:500 10px var(--mono);letter-spacing:.04em}.mark{display:grid;width:68px;height:68px;place-items:center;border-radius:17px;color:#fff;background:linear-gradient(145deg,var(--cyan),var(--blue));font:700 15px var(--mono)}.layout{display:grid;grid-template-columns:1.7fr .8fr;gap:55px;padding-top:42px}section{margin-bottom:36px}h2{margin:0 0 18px;padding-bottom:9px;border-bottom:1px solid var(--line);color:var(--blue);font:600 9px var(--mono);letter-spacing:.13em;text-transform:uppercase}.summary{margin:0;color:#454d66;font-size:13px;line-height:1.7}.entry{margin-bottom:25px}.entry-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px}.entry h3{margin:0;font-size:17px;letter-spacing:-.025em}.entry time{color:var(--muted);font:400 8px var(--mono);white-space:nowrap}.entry .type{display:block;margin-top:4px;color:var(--blue);font:500 8px var(--mono)}.entry p{margin:9px 0 0;color:#5d647b;font-size:11px;line-height:1.65}.entry ul{margin:9px 0 0;padding-left:17px;color:#5d647b;font-size:10.5px;line-height:1.65}.side p,.side a{color:#5d647b;font-size:10.5px;line-height:1.75}.side a{color:var(--ink);text-decoration:none}.skills{display:flex;flex-wrap:wrap;gap:6px}.skills span{padding:6px 8px;border:1px solid var(--line);border-radius:5px;color:#454d66;font:400 8px var(--mono)}.facts{margin:0}.facts div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:10px}.facts dt{color:var(--muted)}.facts dd{margin:0;font-weight:600}.note{padding:11px;border-left:2px solid var(--cyan);background:#f0f4ff;color:#5d647b!important;font-size:9px!important}@media(max-width:680px){.page{padding:38px 26px}.layout{grid-template-columns:1fr;gap:15px}.header h1{font-size:40px}.mark{width:54px;height:54px}.actions{margin-block:14px}}@media print{@page{size:A4;margin:0}body{background:#fff}.actions{display:none}.page{width:100%;min-height:auto;margin:0;padding:45px 52px;box-shadow:none}.layout{gap:45px}section{margin-bottom:28px}}
+    :root {
+      --ink: #172033;
+      --muted: #526071;
+      --line: #d9e0e7;
+      --paper: #ffffff;
+      --canvas: #e9edf1;
+      --navy: #193a5a;
+      --teal: #087f73;
+      --amber: #b66317;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: var(--canvas); }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .actions {
+      display: flex;
+      width: min(210mm, calc(100% - 32px));
+      margin: 18px auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .actions a,
+    .actions button {
+      min-height: 40px;
+      padding: 9px 13px;
+      border: 1px solid #aeb8c3;
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      font: 700 12px/1 Arial, sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .actions button {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .sheet {
+      position: relative;
+      width: min(210mm, calc(100% - 32px));
+      min-height: 297mm;
+      margin: 0 auto 24px;
+      padding: 14mm 16mm 13mm;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: 0 18px 55px rgba(23, 32, 51, 0.14);
+    }
+
+    .sheet::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 5px;
+      content: "";
+      background: linear-gradient(90deg, var(--navy) 0 68%, var(--teal) 68% 88%, var(--amber) 88%);
+    }
+
+    .masthead {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: start;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .name {
+      margin: 0;
+      color: var(--navy);
+      font-size: 38px;
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .role {
+      margin: 7px 0 0;
+      color: var(--teal);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .role-focus {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 10.5px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .contact {
+      display: grid;
+      gap: 4px;
+      margin: 0;
+      text-align: right;
+      font-size: 10.5px;
+      line-height: 1.35;
+    }
+
+    .contact a { text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    .section {
+      margin-top: 15px;
+      break-inside: avoid;
+    }
+
+    .section-title {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 7px;
+      color: var(--navy);
+      font-size: 12px;
+      line-height: 1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      height: 1px;
+      flex: 1;
+      content: "";
+      background: var(--line);
+    }
+
+    .summary {
+      margin: 0;
+      color: #344254;
+      font-size: 12px;
+      line-height: 1.52;
+    }
+
+    .summary strong { color: var(--ink); }
+
+    .impact-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 10px;
+      border-block: 1px solid var(--line);
+    }
+
+    .impact {
+      min-width: 0;
+      padding: 8px 10px;
+      border-right: 1px solid var(--line);
+    }
+
+    .impact:first-child { padding-left: 0; }
+    .impact:last-child { padding-right: 0; border-right: 0; }
+
+    .impact strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--teal);
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .impact span {
+      display: block;
+      color: var(--muted);
+      font-size: 9.5px;
+      line-height: 1.35;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--line);
+    }
+
+    .skill-group {
+      padding: 8px 10px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .skill-group:nth-child(2n) { border-right: 0; }
+    .skill-group:nth-last-child(-n + 2) { border-bottom: 0; }
+
+    .skill-group h3 {
+      margin: 0 0 4px;
+      color: var(--teal);
+      font-size: 10px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .skill-group p {
+      margin: 0;
+      color: #394758;
+      font-size: 10.3px;
+      line-height: 1.45;
+    }
+
+    .entry {
+      margin-top: 11px;
+      break-inside: avoid;
+    }
+
+    .entry:first-of-type { margin-top: 0; }
+
+    .entry-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: baseline;
+    }
+
+    .entry h3,
+    .project h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .entry-meta,
+    .project-meta {
+      margin: 2px 0 0;
+      color: var(--teal);
+      font-size: 9.5px;
+      font-weight: 800;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .context {
+      color: var(--muted);
+      font-size: 9.5px;
+      white-space: nowrap;
+    }
+
+    .entry ul,
+    .project ul,
+    .capability-list {
+      margin: 5px 0 0;
+      padding-left: 16px;
+      color: #344254;
+      font-size: 11px;
+      line-height: 1.42;
+    }
+
+    .entry li,
+    .project li,
+    .capability-list li { margin: 2px 0; }
+
+    .entry strong,
+    .project strong { color: var(--ink); }
+
+    .page-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 9px;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .page-header h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .page-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .project {
+      margin-top: 12px;
+      padding-bottom: 11px;
+      border-bottom: 1px solid var(--line);
+      break-inside: avoid;
+    }
+
+    .project:first-of-type { margin-top: 0; }
+
+    .project-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .project-link {
+      flex: 0 0 auto;
+      color: var(--navy);
+      font-size: 9.5px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .project-link:hover { text-decoration: underline; }
+
+    .tech-line {
+      margin: 6px 0 0;
+      color: var(--amber);
+      font-size: 9px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .support-block {
+      padding: 10px 11px;
+      border: 1px solid var(--line);
+      break-inside: avoid;
+    }
+
+    .support-block h3 {
+      margin: 0 0 5px;
+      color: var(--teal);
+      font-size: 10px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .support-block p {
+      margin: 0;
+      color: #394758;
+      font-size: 10.5px;
+      line-height: 1.45;
+    }
+
+    .target-line {
+      margin: 12px 0 0;
+      padding: 8px 10px;
+      border-left: 3px solid var(--amber);
+      background: #f7f8fa;
+      color: #344254;
+      font-size: 10.5px;
+      line-height: 1.45;
+    }
+
+    .page-number {
+      position: absolute;
+      right: 16mm;
+      bottom: 7mm;
+      color: #7b8794;
+      font-size: 8px;
+    }
+
+    @media (max-width: 700px) {
+      .sheet {
+        width: 100%;
+        min-height: auto;
+        margin-bottom: 14px;
+        padding: 30px 22px 42px;
+      }
+
+      .masthead { grid-template-columns: 1fr; gap: 12px; }
+      .contact { text-align: left; }
+      .impact-row, .skill-grid, .two-column { grid-template-columns: 1fr; }
+      .impact { border-right: 0; border-bottom: 1px solid var(--line); padding-inline: 0; }
+      .impact:last-child { border-bottom: 0; }
+      .skill-group { border-right: 0; }
+      .skill-group:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+      .page-header { align-items: flex-start; flex-direction: column; gap: 5px; }
+      .entry-head { grid-template-columns: 1fr; gap: 2px; }
+      .context { white-space: normal; }
+      .name { font-size: 34px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 0; }
+
+      html,
+      body {
+        background: #fff;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .actions { display: none; }
+
+      .sheet {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .sheet:last-child {
+        break-after: auto;
+        page-break-after: auto;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="actions"><a href="index.html">← Back to portfolio</a><button type="button" onclick="window.print()">Save as PDF / Print</button></div>
-  <main class="page">
-    <header class="header">
-      <div><h1>Parsa<br>Moloudi</h1><p>BACKEND &amp; DEVOPS ENGINEER · TEHRAN, IRAN</p></div>
-      <div class="mark">PM</div>
-    </header>
+  <nav class="actions" aria-label="Resume actions">
+    <a href="index.html">Back to portfolio</a>
+    <button type="button" onclick="window.print()">Download PDF / Print</button>
+  </nav>
 
-    <div class="layout">
-      <div>
-        <section>
-          <h2>Professional summary</h2>
-          <p class="summary"><strong>Backend and DevOps engineer</strong> with full-stack experience building <strong>scalable web applications, secure REST APIs, multi-tenant SaaS platforms</strong>, and reliable production infrastructure. Strong in <strong>Node.js, NestJS, PostgreSQL, MongoDB, Redis, Docker, Linux, and system design</strong>, with a focus on clean architecture, performance optimization, zero-downtime delivery, and observability. Open-source creator of Homa.js and Task Manager.</p>
-        </section>
+  <main class="resume">
+    <article class="sheet" aria-label="Resume page 1">
+      <header class="masthead">
+        <div>
+          <h1 class="name">Parsa Moloudi</h1>
+          <p class="role">Backend &amp; DevOps Engineer</p>
+          <p class="role-focus">Node.js / NestJS / Linux / Docker / PostgreSQL / Distributed Systems</p>
+        </div>
+        <address class="contact">
+          <span>Tehran, Iran</span>
+          <a href="tel:+989386932701">+98 938 693 2701</a>
+          <a href="mailto:parsamoloody@gmail.com">parsamoloody@gmail.com</a>
+          <a href="https://github.com/parsamoloody">github.com/parsamoloody</a>
+          <a href="https://www.linkedin.com/in/parsamoloodi/">linkedin.com/in/parsamoloodi</a>
+        </address>
+      </header>
 
-        <section>
-          <h2>Professional experience</h2>
-          <article class="entry">
-            <div class="entry-head"><h3>Adymob · Gem Panel</h3><time>Production SaaS</time></div>
-            <span class="type">BACKEND DEVELOPER · VPN SAAS MANAGEMENT PLATFORM</span>
-            <p>Worked on a multi-tenant platform for managing VPN applications, servers, configurations, and distributed synchronization across mirror servers and REST APIs.</p>
-            <ul><li>Refactored a critical synchronization module from <strong>roughly 2,000 lines</strong> of tightly coupled legacy code to <strong>about 150 lines</strong> of modular, reusable code using <strong>Hexagonal Architecture</strong>.</li><li>Built <strong>encrypted periodic synchronization</strong> across distributed mirror servers and improved scheduling, resource use, failure recovery, and reliability.</li><li>Designed caching that <strong>reduced database load and prevented race conditions</strong>, then added unit tests, API rate limiting, and request guards.</li><li>Built <strong>blue-green CI/CD for zero-downtime releases</strong>, integrated <strong>CodeRabbit with the self-hosted GitLab panel</strong> for automated AI-assisted code review, and added Sentry, ClickHouse logging, and infrastructure alerts.</li></ul>
-          </article>
+      <section class="section">
+        <h2 class="section-title">Professional Profile</h2>
+        <p class="summary"><strong>Backend and DevOps engineer</strong> who builds secure APIs, multi-tenant services, distributed synchronization, and production infrastructure. Experienced with <strong>Node.js, NestJS, PostgreSQL, Redis, Linux administration, Docker, CI/CD, monitoring, and system design</strong>. Strong focus on clean architecture, database performance, release reliability, and turning difficult legacy systems into smaller, testable components. Targeting backend, DevOps, and platform engineering roles with production ownership.</p>
 
-          <article class="entry">
-            <div class="entry-head"><h3>Noor Navazan</h3><time>Commerce platform</time></div>
-            <span class="type">BACKEND / FULL-STACK DEVELOPER · CUSTOM CMS &amp; BACK OFFICE</span>
-            <p>Engineered a decoupled commerce administration system with independent development and deployment for the admin panel and customer-facing website.</p>
-            <ul><li>Built product, category, media, user, permission, SKU, <strong>role-based pricing</strong>, shopping basket, and <strong>real-time stock workflows</strong> across UI and API layers.</li><li>Applied <strong>Hexagonal Architecture, SOLID principles, granular access control</strong>, and a decoupled admin design for maintainable, independent delivery.</li><li>Used a <strong>Lage monorepo, Docker Compose, and Elasticsearch</strong> for orchestration, containerized development, and high-performance search.</li></ul>
-          </article>
-        </section>
-      </div>
+        <div class="impact-row" aria-label="Selected impact">
+          <div class="impact"><strong>2,000 to 150</strong><span>lines in a critical sync module after architecture refactoring</span></div>
+          <div class="impact"><strong>Zero downtime</strong><span>blue-green delivery workflow for production releases</span></div>
+          <div class="impact"><strong>Distributed</strong><span>encrypted synchronization across multiple mirror servers</span></div>
+        </div>
+      </section>
 
-      <aside class="side">
-        <section>
-          <h2>Contact</h2>
-          <p><a href="mailto:parsamoloody@gmail.com">parsamoloody@gmail.com</a><br><a href="tel:+989386932701">+98 938 693 2701</a><br><a href="https://github.com/parsamoloody">github.com/parsamoloody</a><br><a href="https://www.linkedin.com/in/parsamoloodi/">linkedin.com/in/parsamoloodi</a><br>Tehran, Iran</p>
-        </section>
+      <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skill-grid">
+          <div class="skill-group">
+            <h3>Backend Engineering</h3>
+            <p>TypeScript, Node.js, NestJS, REST API design, JWT, Passport, RBAC, API security, rate limiting, request validation, middleware, unit testing</p>
+          </div>
+          <div class="skill-group">
+            <h3>Databases &amp; SQL</h3>
+            <p>PostgreSQL, MongoDB, Redis, Prisma, ClickHouse, Elasticsearch, SQL queries, schema design, joins, indexing, query optimization, caching</p>
+          </div>
+          <div class="skill-group">
+            <h3>DevOps &amp; Linux</h3>
+            <p>Linux, Linux server administration, Bash scripts, Docker, Docker Compose, Nginx, GitLab CI/CD, blue-green deployment, environment management</p>
+          </div>
+          <div class="skill-group">
+            <h3>Systems &amp; Reliability</h3>
+            <p>System design, distributed systems, Hexagonal Architecture, Clean Architecture, SOLID, race-condition handling, Sentry, monitoring, alerting, logging</p>
+          </div>
+        </div>
+      </section>
 
-        <section>
-          <h2>Backend engineering</h2>
-          <div class="skills"><span>TypeScript</span><span>Node.js</span><span>NestJS</span><span>REST APIs</span><span>JWT</span><span>API Security</span><span>PostgreSQL</span><span>MongoDB</span><span>Redis</span><span>ClickHouse</span><span>Elasticsearch</span><span>Query Optimization</span></div>
-        </section>
+      <section class="section">
+        <h2 class="section-title">Professional Experience</h2>
 
-        <section>
-          <h2>DevOps &amp; reliability</h2>
-          <div class="skills"><span>Docker</span><span>Docker Compose</span><span>CI/CD</span><span>Blue-Green Deployment</span><span>Linux</span><span>Nginx</span><span>Sentry</span><span>Monitoring</span><span>Centralized Logging</span><span>GitLab</span></div>
-        </section>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Adymob - Gem Panel</h3>
+              <p class="entry-meta">Backend Developer | Multi-tenant VPN SaaS Platform</p>
+            </div>
+            <span class="context">Production SaaS</span>
+          </div>
+          <ul>
+            <li>Developed backend services for managing VPN applications, servers, configurations, users, and synchronization across <strong>geographically distributed mirror servers</strong>.</li>
+            <li>Refactored a tightly coupled synchronization module from <strong>about 2,000 lines to about 150 lines</strong> using <strong>Hexagonal Architecture</strong>, improving testability and maintainability.</li>
+            <li>Implemented <strong>encrypted periodic synchronization</strong>, scheduling improvements, caching, failure recovery, and <strong>race-condition protection</strong> for reliable mirror operations.</li>
+            <li><strong>Reduced database pressure</strong> through cache-aware API design and added <strong>unit tests, request guards, and rate limiting</strong> alongside other API security controls.</li>
+            <li>Built <strong>blue-green CI/CD for zero-downtime releases</strong> and added Sentry, ClickHouse logs, <strong>infrastructure and container monitoring</strong>, alerts, and AI-assisted code review in self-hosted GitLab.</li>
+          </ul>
+        </article>
 
-        <section>
-          <h2>Project experience</h2>
-          <p><strong><a href="https://github.com/parsamoloody/taks_manager">Task Manager ↗</a></strong><br><strong>NestJS collaboration APIs</strong> with JWT/RBAC, PostgreSQL, Prisma, caching, AI workflows, Docker, and CI/CD.</p>
-          <p><strong><a href="https://smartcdv2.vercel.app/en">Jantech ↗</a></strong><br>Multilingual commerce platform with <strong>dynamic catalog management</strong> and a configurable <strong>3D product viewer</strong>.</p>
-        </section>
-      </aside>
-    </div>
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <h3>Noor Navazan</h3>
+              <p class="entry-meta">Backend Developer | Custom CMS &amp; Commerce Back Office</p>
+            </div>
+            <span class="context">noornavazan.com</span>
+          </div>
+          <ul>
+            <li>Built a <strong>decoupled administration system</strong> covering products, categories, media, users, permissions, attributes, product details, and shopping-basket workflows.</li>
+            <li>Designed an <strong>SKU-based product model</strong> with per-SKU attributes, pricing, stock, <strong>role-based pricing</strong>, and real-time stock verification across API and user flows.</li>
+            <li>Implemented <strong>granular RBAC and method-level permissions</strong>, user grouping, account-safety rules, media management, and secure owner protections.</li>
+            <li>Applied <strong>Hexagonal Architecture and SOLID principles</strong> in a Lage monorepo using <strong>Docker Compose and Elasticsearch</strong>.</li>
+          </ul>
+        </article>
+      </section>
+
+      <span class="page-number">1 / 2</span>
+    </article>
+
+    <article class="sheet" aria-label="Resume page 2">
+      <header class="page-header">
+        <h1>Projects &amp; Engineering Depth</h1>
+        <p>Parsa Moloudi | Backend &amp; DevOps Engineer</p>
+      </header>
+
+      <section class="section">
+        <h2 class="section-title">Open Source</h2>
+        <article class="project">
+          <div class="project-title">
+            <div>
+              <h3>HomaJS - Creator &amp; Maintainer</h3>
+              <p class="project-meta">Lightweight, zero-dependency Node.js web framework with native TypeScript support</p>
+            </div>
+            <a class="project-link" href="https://github.com/parsamoloody/homa">github.com/parsamoloody/homa</a>
+          </div>
+          <ul>
+            <li>Built directly on <strong>Node.js native HTTP modules</strong> with custom request and response abstractions, a minimal core, and <strong>no runtime dependencies</strong>.</li>
+            <li>Implemented a <strong>routing engine for GET, POST, PUT, PATCH, and DELETE</strong>, including dynamic parameters, global prefixes, route-specific middleware, and ordered global middleware.</li>
+            <li>Designed an <strong>asynchronous middleware pipeline</strong> plus built-in parsers for JSON, URL-encoded, text, binary, and multipart request bodies with configurable size limits.</li>
+            <li>Created a <strong>configurable query parser</strong> supporting nested objects, arrays, URL decoding, and automatic number and boolean conversion.</li>
+            <li>Added fluent response APIs, MVC-style organization, <strong>TypeScript declarations, CommonJS/ESM exports</strong>, build checks, and package-ready distribution.</li>
+          </ul>
+          <p class="tech-line">NODE.JS HTTP | TYPESCRIPT | ROUTING | MIDDLEWARE | REQUEST PARSING | FRAMEWORK DESIGN</p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Selected Projects</h2>
+
+        <article class="project">
+          <div class="project-title">
+            <div>
+              <h3>Task Manager</h3>
+              <p class="project-meta">Production-oriented collaboration API and monorepo</p>
+            </div>
+            <a class="project-link" href="https://github.com/parsamoloody/taks_manager">github.com/parsamoloody/taks_manager</a>
+          </div>
+          <ul>
+            <li>Built <strong>modular NestJS REST APIs</strong> for authentication, workspaces, boards, members, tasks, comments, labels, and team workflows.</li>
+            <li>Implemented <strong>JWT/Passport authentication</strong>, protected routes, <strong>PostgreSQL schema and migrations through Prisma</strong>, Swagger documentation, and validation.</li>
+            <li>Used <strong>Redis and BullMQ</strong> for queued notifications, retries, and delayed task reminders; organized shared types in a Turborepo/pnpm workspace.</li>
+            <li>Designed for maintainability with <strong>modular boundaries</strong>, environment-based configuration, database migrations, tests, and <strong>Docker-ready CI/CD workflows</strong>.</li>
+          </ul>
+          <p class="tech-line">NESTJS | POSTGRESQL | PRISMA | REDIS | BULLMQ | JWT | SWAGGER | TURBOREPO</p>
+        </article>
+
+        <article class="project">
+          <div class="project-title">
+            <div>
+              <h3>Jantech Product Platform</h3>
+              <p class="project-meta">Dynamic product catalog and configurable 3D product experience</p>
+            </div>
+            <a class="project-link" href="https://github.com/parsamoloody/jantech-v2">github.com/parsamoloody/jantech-v2</a>
+          </div>
+          <ul>
+            <li>Delivered a <strong>multilingual product platform</strong> with dynamic content, categories, configurable product materials and colors, and a <strong>reusable API integration layer</strong>.</li>
+            <li>Integrated product APIs and delivered the <strong>production deployment</strong> with TypeScript and Next.js, demonstrating <strong>end-to-end ownership</strong> of a configurable catalog system.</li>
+          </ul>
+          <p class="tech-line">TYPESCRIPT | NEXT.JS | API INTEGRATION | DEPLOYMENT | PRODUCT CONFIGURATION</p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Backend &amp; Operations Capabilities</h2>
+        <div class="two-column">
+          <div class="support-block">
+            <h3>Linux &amp; Automation</h3>
+            <p>Linux server administration, service and process troubleshooting, permissions, logs, resource monitoring, Nginx reverse proxy configuration, Docker operations, and Bash scripting for repeatable deployment and maintenance tasks.</p>
+          </div>
+          <div class="support-block">
+            <h3>Database Engineering</h3>
+            <p>Relational schema design, practical SQL queries, joins, indexes, migrations, query analysis and optimization, PostgreSQL administration basics, Redis caching, and safe data access under concurrent workloads.</p>
+          </div>
+          <div class="support-block">
+            <h3>Delivery &amp; Observability</h3>
+            <p>Containerized environments, Docker Compose, CI/CD pipelines, blue-green releases, health and resource monitoring, centralized logs, Sentry error tracking, ClickHouse operational data, and alert-driven incident response.</p>
+          </div>
+          <div class="support-block">
+            <h3>Architecture &amp; Security</h3>
+            <p>System design, distributed synchronization, modular monoliths, Hexagonal and Clean Architecture, API authorization, rate limiting, validation, encryption, race-condition prevention, refactoring, testing, and performance profiling.</p>
+          </div>
+        </div>
+      </section>
+
+      <p class="target-line"><strong>Role focus:</strong> Backend Engineer, Node.js Engineer, DevOps Engineer, or Platform Engineer positions where reliable APIs, Linux infrastructure, automation, databases, and production ownership are central.</p>
+
+      <span class="page-number">2 / 2</span>
+    </article>
   </main>
 </body>
 </html>
