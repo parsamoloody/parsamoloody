@@ -172,5 +172,21 @@ if (isDesktopPointer() && !reduceMotion) {
 }
 
 const year = document.querySelector('#year');
-if (year) year.textContent = new Date().getFullYear();
+if (year) {
+  const isPersian = document.documentElement.lang === 'fa';
+  const currentYear = new Date().getFullYear();
+  year.textContent = isPersian ? currentYear.toLocaleString('fa-IR', { useGrouping: false }) : currentYear;
+}
+
+// Persist language selection on switcher clicks
+document.querySelectorAll('.lang-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.lang;
+    if (lang) {
+      try {
+        localStorage.setItem('preferred_language', lang);
+      } catch (e) {}
+    }
+  });
+});
 

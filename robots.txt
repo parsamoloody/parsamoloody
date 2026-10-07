@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://parsamoloody.github.io/parsamoloody/sitemap.xml

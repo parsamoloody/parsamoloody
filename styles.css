@@ -270,8 +270,84 @@ button {
   transform: translateX(-50%) scale(1);
 }
 
-.nav-cta {
+.header-actions {
   justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 99px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lang-btn.active {
+  color: #0b0e12;
+  background: var(--cyan);
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(49, 215, 255, 0.45);
+}
+
+.lang-divider {
+  color: var(--faint);
+  font-size: 10px;
+  opacity: 0.6;
+  user-select: none;
+}
+
+.mobile-menu-lang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  margin: 12px 0 6px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.mobile-menu-lang .lang-btn {
+  min-width: 50px;
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.nav-cta {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -285,6 +361,7 @@ button {
 .nav-cta span {
   color: var(--cyan);
 }
+
 
 .header-mobile-actions {
   display: none;
@@ -2124,7 +2201,8 @@ button {
 
   .brand-copy,
   .desktop-nav,
-  .nav-cta {
+  .nav-cta,
+  .header-actions {
     display: none;
   }
 
@@ -2670,3 +2748,141 @@ button {
     display: none !important;
   }
 }
+
+/* ==========================================================================
+   Persian (Farsi) & RTL Layout Enhancements
+   ========================================================================== */
+html[lang="fa"],
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[lang="fa"] body,
+[dir="rtl"] body {
+  font-family: "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: normal;
+}
+
+html[lang="fa"] h1,
+html[lang="fa"] h2,
+html[lang="fa"] h3,
+html[lang="fa"] h4,
+html[lang="fa"] p,
+html[lang="fa"] .brand-copy,
+html[lang="fa"] .desktop-nav,
+html[lang="fa"] .mobile-menu,
+html[lang="fa"] .section-heading,
+html[lang="fa"] .about-story,
+html[lang="fa"] .profile-panel,
+html[lang="fa"] .capability-card,
+html[lang="fa"] .project-info,
+html[lang="fa"] .more-work,
+html[lang="fa"] .principle-list,
+html[lang="fa"] .contact,
+html[lang="fa"] .site-footer {
+  letter-spacing: normal;
+}
+
+html[lang="fa"] .brand-copy small {
+  letter-spacing: normal;
+  font-size: 9px;
+  font-family: "Vazirmatn", sans-serif;
+  font-weight: 500;
+  text-transform: none;
+}
+
+/* Retain LTR direction for code, technology chips, terminals, and numbers */
+html[lang="fa"] code,
+html[lang="fa"] pre,
+html[lang="fa"] .brand-mark,
+html[lang="fa"] .hero-location,
+html[lang="fa"] .counter,
+html[lang="fa"] .project-tags,
+html[lang="fa"] .terminal-head,
+html[lang="fa"] .mock-window,
+html[lang="fa"] .dashboard-shell,
+html[lang="fa"] .smart-phone,
+html[lang="fa"] .skills-console pre,
+html[lang="fa"] .homa-terminal,
+html[lang="fa"] .lang-switch,
+html[lang="fa"] .tech-marquee {
+  direction: ltr;
+  text-align: left;
+}
+
+html[lang="fa"] .hero-top {
+  flex-direction: row-reverse;
+}
+
+html[lang="fa"] .hero-intro {
+  letter-spacing: normal;
+  line-height: 1.85;
+}
+
+html[lang="fa"] .about::before {
+  left: auto;
+  right: 0;
+}
+
+html[lang="fa"] .about-story {
+  padding-left: 0;
+  padding-right: 9%;
+}
+
+html[lang="fa"] .about-story p {
+  line-height: 1.95;
+}
+
+html[lang="fa"] .profile-panel-head {
+  flex-direction: row-reverse;
+}
+
+html[lang="fa"] .profile-panel dl div {
+  flex-direction: row-reverse;
+}
+
+html[lang="fa"] .profile-panel a {
+  direction: ltr;
+  text-align: left;
+}
+
+html[lang="fa"] .capability-card li {
+  padding-left: 0;
+  padding-right: 14px;
+}
+
+html[lang="fa"] .capability-card li::before {
+  left: auto;
+  right: 0;
+}
+
+html[lang="fa"] .repo-links a:hover {
+  padding-left: 15px;
+  padding-right: 24px;
+}
+
+html[lang="fa"] .principle-list article {
+  grid-template-columns: 80px 1fr 60px;
+}
+
+html[lang="fa"] .principle-list article > span {
+  font-family: var(--mono);
+}
+
+html[lang="fa"] .site-footer {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1100px) {
+  html[lang="fa"] .about-story {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 850px) {
+  html[lang="fa"] .site-footer {
+    flex-direction: column;
+  }
+}
+
